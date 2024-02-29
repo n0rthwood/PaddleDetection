@@ -1,0 +1,23 @@
+metric: COCO
+num_classes: 1
+
+TrainDataset:
+  name: COCODataSet
+  image_dir: Images
+  anno_path: Annotations/train.json
+  dataset_dir: /opt/image_store/pd_detect_mask_dataset/DatasetId_1824199_1685080582 
+  data_fields: ['image', 'gt_bbox', 'gt_class', 'is_crowd']
+
+EvalDataset:
+  name: COCODataSet
+  image_dir: Images
+  anno_path: Annotations/test.json
+  dataset_dir: /opt/image_store/pd_detect_mask_dataset/DatasetId_1824199_1685080582 
+  allow_empty: true
+
+TestDataset:
+  name: COCODataSet
+  image_dir: Images
+  anno_path: Annotations/test.json
+  dataset_dir: /opt/image_store/pd_detect_mask_dataset/DatasetId_1824199_1685080582
+  allow_empty: true
