@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 bash benchmark/run_benchmark.sh sp 2 fp16 1 faster_rcnn

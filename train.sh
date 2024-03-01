@@ -1,2 +1,4 @@
 export CUDA_VISIBLE_DEVICES=0,1
-python -m paddle.distributed.launch --gpus 0,1 tools/train.py -c /opt/workspace/PaddleDetection/configs/rtdetr/rtdetr_r18vd_6x_coco.yml --eval
+#cd /opt/workspace/PaddleDetection// ; /usr/bin/env /home/joysort/.conda/envs/paddle/bin/python /home/joysort/.local/share/code-server/extensions/ms-python.python-2023.14.0-universal/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 50817 -- /opt/workspace/PaddleDetection//tools/train.py -c /opt/workspace/PaddleDetection/configs/rtdetr/rtdetr_r18vd_6x_coco.yml --eval 
+#python -m paddle.distributed.launch --gpus 0,1 tools/train.py -c /opt/workspace/PaddleDetection/configs/rtdetr/rtdetr_r18vd_6x_coco.yml --eval
+python tools/train.py -c /opt/workspace/PaddleDetection/configs/rtdetr/rtdetr_r18vd_6x_coco.yml --eval
