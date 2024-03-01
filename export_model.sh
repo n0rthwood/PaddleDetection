@@ -7,3 +7,11 @@ paddle2onnx --model_dir output_inference/rtdetr_r18vd_6x_coco \
             --params_filename model.pdiparams \
             --opset_version 16 \
             --save_file rtdetr_r18vd_6x_coco.onnx
+
+
+ trtexec --onnx=./rtdetr_r18vd_6x_coco.onnx \
+        --workspace=4096 \
+        --shapes=image:1x3x640x640 \
+        --saveEngine=rtdetr_r18vd_6x_coco.trt \
+        --avgRuns=100 \
+        --fp16           

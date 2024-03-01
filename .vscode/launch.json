@@ -1,7 +1,23 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
+
+        {
+            "name": "Python: Infer RTDeTr",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scratch.py",
+            "args": [
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/",
+            "env": {},
+            "envFile": "${workspaceFolder}/.env",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
 
         {
             "name": "Python: Train RTDeTr",
