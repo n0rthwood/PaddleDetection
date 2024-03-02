@@ -32,27 +32,27 @@ ort_inputs = {
     ort_session.get_inputs()[0].name: im_shape,  # 'im_shape'
     ort_session.get_inputs()[2].name: scale_factor  # 'scale_factor'
 }
+ort_output = ort_session.run(None, ort_inputs)
+# # Run inference
 
-# Run inference
+# # Start timing
+# start_time = time.time()
 
-# Start timing
-start_time = time.time()
+# # Run inference 100 times
+# for _ in range(100):
+    
 
-# Run inference 100 times
-for _ in range(100):
-    ort_output = ort_session.run(None, ort_inputs)
+# # End timing
+# end_time = time.time()
 
-# End timing
-end_time = time.time()
+# # Calculate and print the total duration
+# total_duration = end_time - start_time
+# total_duration = total_duration*1000
+# print(f"Total duration for 100 inferences: {total_duration:.2f} ms seconds")
 
-# Calculate and print the total duration
-total_duration = end_time - start_time
-total_duration = total_duration*1000
-print(f"Total duration for 100 inferences: {total_duration:.2f} ms seconds")
-
-# Optionally, calculate and print the average duration per inference
-average_duration = total_duration / 100
-print(f"Average duration per inference: {average_duration:.4f} ms seconds")
+# # Optionally, calculate and print the average duration per inference
+# average_duration = total_duration / 100
+# print(f"Average duration per inference: {average_duration:.4f} ms seconds")
 # print("Output shape:", ort_output.shape)
 # print("Output content:", ort_output)
 # Assuming ort_output contains bounding boxes and labels in a specific format
@@ -83,6 +83,7 @@ def draw_bbox(image, bboxes, catid2name, threshold=0.1):
 catid2name = {0: 'single', 1: 'Class2'}  # Example class ID to name mapping
 # Assuming ort_output is your model output with shape (300, 6)
 image = Image.open(original_img)  # Load your original image
+print(ort_output)
 image = draw_bbox(image, ort_output, catid2name, threshold=0.1)
 
 # Display or save the result

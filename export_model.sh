@@ -6,7 +6,7 @@ paddle2onnx --model_dir output_inference/rtdetr_r18vd_6x_coco \
             --model_filename model.pdmodel \
             --params_filename model.pdiparams \
             --opset_version 16 \
-            --save_file rtdetr_r18vd_6x_coco.onnx
+            --save_file output_inference/rtdetr_r18vd_6x_coco.onnx
 
 
  trtexec --onnx=./rtdetr_r18vd_6x_coco.onnx \
